@@ -1,0 +1,2 @@
+\
+@echo off\nSET ROOT_DIR=%~dp0\ncd /d "%ROOT_DIR%backend"\nif not exist venv (\n  python -m venv venv\n)\ncall venv\Scripts\activate\npip install -r requirements.txt\nstart cmd /k "python app.py"\ncd /d "%ROOT_DIR%frontend"\nif not exist node_modules (\n  npm install\n)\nstart cmd /k "npm run dev"\n
